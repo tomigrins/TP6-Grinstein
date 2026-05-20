@@ -1,21 +1,30 @@
-import React from "react";
+import './MovieDetail.css'
 
 const MovieDetail = ({ movie }) => {
-    return (
-        <div className="movie-detail">
-            <h1>{movie.Title}</h1>
-            <img src={movie.Poster} alt={movie.Title} />
-            <p>Año: {movie.Year}</p>
-            <p>Género: {movie.Genre}</p>
-            <p>Director: {movie.Director}</p>
-            <p>Actores principales: {movie.Actors}</p>
-            <p>Sinopsis: {movie.Plot}</p>
-            <p>Duración: {movie.Runtime}</p>
-            <p>Idioma: {movie.Language}</p>
-            <p>País: {movie.Country}</p>
-            <p>Puntaje IMDb: {movie.imdbRating}</p>
-        </div>
-    );
-};
+  const poster =
+    movie?.Poster && movie.Poster !== 'N/A'
+      ? movie.Poster
+      : 'https://via.placeholder.com/320x480?text=Sin+imagen'
+
+  return (
+    <article className="movie-detail-card">
+      <div className="movie-detail-poster">
+        <img src={poster} alt={movie?.Title || 'Portada no disponible'} />
+      </div>
+      <div className="movie-detail-content">
+        <h2>{movie?.Title || 'Título no disponible'}</h2>
+        <p className="detail-line"><strong>Año:</strong> {movie?.Year || 'N/A'}</p>
+        <p className="detail-line"><strong>Género:</strong> {movie?.Genre || 'N/A'}</p>
+        <p className="detail-line"><strong>Director:</strong> {movie?.Director || 'N/A'}</p>
+        <p className="detail-line"><strong>Actores:</strong> {movie?.Actors || 'N/A'}</p>
+        <p className="detail-line"><strong>Sinopsis:</strong> {movie?.Plot || 'N/A'}</p>
+        <p className="detail-line"><strong>Duración:</strong> {movie?.Runtime || 'N/A'}</p>
+        <p className="detail-line"><strong>Idioma:</strong> {movie?.Language || 'N/A'}</p>
+        <p className="detail-line"><strong>País:</strong> {movie?.Country || 'N/A'}</p>
+        <p className="detail-line"><strong>IMDb:</strong> {movie?.imdbRating || 'N/A'}</p>
+      </div>
+    </article>
+  )
+}
 
 export default MovieDetail;

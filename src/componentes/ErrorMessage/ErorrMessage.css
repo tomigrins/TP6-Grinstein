@@ -1,0 +1,13 @@
+.error-message {
+  padding: 16px;
+  border-radius: 18px;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+body.modo-oscuro .error-message {
+  background: #7f1d1d;
+  color: #fee2e2;
+  border-color: #fca5a5;
+}

@@ -1,0 +1,35 @@
+.loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-weight: 600;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #d1d5db;
+  border-top-color: #4338ca;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+body.modo-oscuro .loader {
+  background: #1f2937;
+  color: #bfdbfe;
+}
+
+body.modo-oscuro .spinner {
+  border-color: #334155;
+  border-top-color: #60a5fa;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
